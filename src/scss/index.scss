@@ -1,0 +1,29 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+$primary: #0E143D;
+$darkSecondary: #8D8E8A;
+$secondary: #EAE7DC;
+$ligthPrimary: #598FEC;
+$neutral:#D8C3A5;
+
+html,
+body{
+    height: 100%;
+    width: 100%;
+    background-color: $secondary !important;
+    color: $primary !important;
+}
+
+
+/* make the customizations */
+$theme-colors: (
+    "primary": $primary,
+    "dark": $primary,
+    "card": $ligthPrimary
+);
+
+@import "~bootstrap/scss/bootstrap";
+@import "./login.scss";
+@import "./home.scss";
+
