@@ -1,17 +1,20 @@
 import React from 'react'
-import {Jumbotron, Container, Image} from 'react-bootstrap'
-import banner1 from '../../img/banner1.jpg'
+import { Button } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 function Hero() {
     return (
-        <Jumbotron fluid>
-            <Container>
+        <div className="jumbotron">
+            <div className="lineColor">
                 <h1>Gaby Manualidades</h1>
                 <p>
-                    Los mejores regalos para ti. 
+                    Los mejores regalos para ti.
                 </p>
-            </Container>
-        </Jumbotron>
+                <div>
+                    <Button variant="primary" as={Link} to="/products">Catalogo</Button>
+                </div>
+            </div>
+        </div>
     )
 }
 

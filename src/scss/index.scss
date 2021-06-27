@@ -1,29 +1,52 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+@font-face {
+    font-family: "Titles";
+    src: local("Cairo"), url(../fonts/Cairo-Regular.ttf) format("truetype");
+}
 
-$primary: #0E143D;
-$darkSecondary: #8D8E8A;
-$secondary: #EAE7DC;
-$ligthPrimary: #598FEC;
-$neutral:#D8C3A5;
+@font-face {
+    font-family: "Cuerpo";
+    src: local("BigShoulders"), url(../fonts/BigShouldersStencilDisplay-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Texts";
+    src: local("Stint"), url(../fonts/StintUltraCondensed-Regular.ttf) format("truetype");
+}
+
+$primary: #0e143d;
+$darkSecondary: #8d8e8a;
+$secondary: #eae7dc;
+$ligthPrimary: #598fec;
+$neutral: #d8c3a5;
+$atncion: #8f0339;
 
 html,
-body{
+body {
     height: 100%;
     width: 100%;
     background-color: $secondary !important;
     color: $primary !important;
+    font-family: "BigShoulders", cursive !important;
 }
 
+h6 {
+    padding: 10px;
+    color: $darkSecondary;
+}
 
 /* make the customizations */
 $theme-colors: (
     "primary": $primary,
+    "secondary": $darkSecondary,
+    "warning":$atncion,
+    "info": $ligthPrimary,
     "dark": $primary,
-    "card": $ligthPrimary
+    "card": $ligthPrimary,
 );
 
 @import "~bootstrap/scss/bootstrap";
 @import "./login.scss";
 @import "./home.scss";
-
+@import "./products.scss";
+@import "./navbar.scss";
+@import "./categorias.scss";

@@ -1,10 +1,86 @@
 .jumbotron {
-    position: relative;
-    background: #000
-        url('../img/banner1.jpg')
-        center center;
-    width: 100%;
-    height: 90vh;
+    background-image: url("../img/banner1.jpg");
+    background-color: #cccccc;
+    //background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    color: #fff;
+    background-attachment: fixed;
+
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.jumbotron h1 {
+    color: $secondary !important;
+}
+
+.jumbotron p {
+    margin-top: 8px;
+    color: $secondary !important;
+    // font-size: 32px;
+}
+
+.lineColor{
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .jumbotron h1 {
+        font-size: 50px;
+    }
+    .jumbotron p {
+        font-size: 15px;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .jumbotron h1 {
+        font-size: 80px;
+    }
+    .jumbotron p {
+        font-size: 20px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .jumbotron h1 {
+        font-size: 90px;
+    }
+    .jumbotron p {
+        font-size: 25px;
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .jumbotron h1 {
+        font-size: 110px;
+    }
+    .jumbotron p {
+        font-size: 30px;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+    .jumbotron h1 {
+        font-size: 120px;
+    }
+    .jumbotron p {
+        font-size: 35px;
+    }
 }

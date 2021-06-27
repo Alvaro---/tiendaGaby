@@ -3,28 +3,32 @@ import { Switch, Route } from 'react-router-dom'
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+import AddProduct from "./pages/AddProduct";
+import Categorias from "./pages/Categorias";
+import NotFound from "./pages/NotFound";
 
 import { GlobalState } from '../GlobalState'
-import { Container } from 'react-bootstrap';
+
 
 function MainPage() {
 
     const state = useContext(GlobalState)
-
-    const [prueba, setPrueba] = state.usuario
-
-    console.log(prueba)
-
+    const [isLogged] = state.userApi.isLogged
+    const [isAdmin] = state.userApi.isAdmin
 
     return (
         <Switch>
             <Route path="/" exact component={Home} />
-            <Container>
-                <Route path="/products" exact component={Products} />
-                <Route path="/login" exact component={Login} />
-            </Container>
+            <Route path="/products" exact component={Products} />
+            <Route path="/login" exact component={isLogged ? NotFound : Login} />
+            <Route path="/register" exact component={isLogged ? NotFound : Register} />
+            
+            <Route path="/addProduct" exact component={isAdmin ? AddProduct : NotFound} />
+            <Route path="/categorias" exact component={isAdmin ? Categorias : NotFound} />
         </Switch>
     )
 }
 
 export default MainPage
+

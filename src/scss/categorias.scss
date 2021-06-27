@@ -1,0 +1,32 @@
+.div_categorias div{
+    margin: 20px;
+}
+
+.lista{
+    background-color: $neutral;
+}
+
+.lista div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    flex-grow: 2;
+    border: 1px solid $darkSecondary;
+}
+
+
+.div_categorias h2{
+    letter-spacing: 1px;
+}
+
+.lista button{
+    min-width: 50px !important;
+    height: 40px;
+}
+
+.lista p{
+    flex-grow: 2;
+}

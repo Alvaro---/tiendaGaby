@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Card, Form, Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import axios from "axios";
+import axios from 'axios'
 
-function Login() {
+function Register() {
 
     const [user, setUser] = useState({
+        name: '',
         email: '',
         password: ''
     })
@@ -15,16 +16,17 @@ function Login() {
         setUser({ ...user, [name]: value })
     }
 
-    const loginSubmit = async e => {
+    const registerSubmit = async e => {
         e.preventDefault()
         try {
-            await axios.post('/user/login', { ...user })
-          //  console.log(token)
+            await axios.post('/user/register', { ...user })
             localStorage.setItem('firstLogin', true)
+
             window.location.href = "/products";
+
         } catch (err) {
             alert(err.response.data.msg)
-        }
+        } 
     }
 
     return (
@@ -35,7 +37,17 @@ function Login() {
                         <h4>Login</h4>
                     </Card.Header>
                     <Card.Body>
-                        <Form onSubmit={loginSubmit}>
+                        <Form onSubmit={registerSubmit}>
+                            <Form.Group className="mt-1">
+                                <Form.Control
+                                    type="text"
+                                    name="name"
+                                    value={user.name}
+                                    placeholder="Ingresar nombre Nombre"
+                                    onChange={onChangeInput}
+                                />
+                            </Form.Group>
+
                             <Form.Group className="mt-1">
                                 <Form.Control
                                     type="email"
@@ -63,7 +75,7 @@ function Login() {
                                     className="mt2">
                                     Entrar
                                 </Button>
-                                <Link to="/register">Crear Cuenta</Link>
+                                <Link to="/login">Ya tienes Cuenta? Ingresa Aqui</Link>
                             </Form.Group>
                         </Form>
                     </Card.Body>
@@ -73,4 +85,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Register

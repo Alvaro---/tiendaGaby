@@ -9,6 +9,26 @@ function Home() {
             <Container>
                 Tarjetas de bienvenida. Con algunos ejemplos sencillos o articulos. 
             </Container>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, minus. Ex deserunt eum asperiores doloremque? Molestias modi sunt perferendis, reiciendis, cupiditate id tempora optio autem natus saepe obcaecati nulla expedita?
+                </p>
+            </div>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, minus. Ex deserunt eum asperiores doloremque? Molestias modi sunt perferendis, reiciendis, cupiditate id tempora optio autem natus saepe obcaecati nulla expedita?
+                </p>
+            </div>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, minus. Ex deserunt eum asperiores doloremque? Molestias modi sunt perferendis, reiciendis, cupiditate id tempora optio autem natus saepe obcaecati nulla expedita?
+                </p>
+            </div>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, minus. Ex deserunt eum asperiores doloremque? Molestias modi sunt perferendis, reiciendis, cupiditate id tempora optio autem natus saepe obcaecati nulla expedita?
+                </p>
+            </div>
         </div>
     )
 }

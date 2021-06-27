@@ -10,9 +10,7 @@ function App() {
     <DataProvider>
       <Router>
         <NavBar />
-        <div className="App">
-          <MainPages />
-        </div>
+        <MainPages />
       </Router>
     </DataProvider>
   );
