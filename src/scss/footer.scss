@@ -1,6 +1,11 @@
-.Footer{
+.Footer {
     background-color: $primary;
     color: $secondary;
     position: relative;
     margin-top: 50px;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
