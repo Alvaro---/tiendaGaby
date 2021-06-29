@@ -3,7 +3,7 @@ import { GlobalState } from '../../GlobalState'
 import axios from 'axios'
 import { Container, Button } from 'react-bootstrap'
 
-import PaypalButton from './PaypalButton'
+//import PaypalButton from './PaypalButton'
 import ReactWhatsapp from 'react-whatsapp';
 
 function Cart() {
