@@ -4,6 +4,8 @@ import { GlobalState } from '../../GlobalState'
 import { Container, Form, Button, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 
+import API from '../../utils/const'
+
 function Categorias() {
 
     const state = useContext(GlobalState);
@@ -20,7 +22,7 @@ function Categorias() {
         e.preventDefault();
         if (onEdit) {
             try {
-                const res = await axios.put(`/api/category/${id}`, { name: cat }, {
+                const res = await axios.put(`${API.URI}/api/category/${id}`, { name: cat }, {
                     headers: { Authorization: token }
                 });
             } catch (err) {
@@ -28,7 +30,7 @@ function Categorias() {
             }
         } else {
             try {
-                const res = await axios.post('/api/category', { name: cat }, {
+                const res = await axios.post(`${API.URI}/api/category`, { name: cat }, {
                     headers: { Authorization: token }
                 });
             } catch (err) {
@@ -48,7 +50,7 @@ function Categorias() {
 
     const borrarCategoria = async (id) => {
         try {
-            const res = await axios.delete(`/api/category/${id}`, {
+            const res = await axios.delete(`${API.URI}/api/category/${id}`, {
                 headers: { Authorization: token }
             })
             setCat('');

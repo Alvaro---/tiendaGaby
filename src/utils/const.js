@@ -1,5 +1,5 @@
 var API = {
-    URI: "http://localhost:4000"
+    URI: "https://young-wildwood-03509.herokuapp.com"
 }
 
 
