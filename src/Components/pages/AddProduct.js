@@ -69,7 +69,7 @@ function AddProduct() {
             let formData = new FormData()
             formData.append('file', file)
             setLoading(true)
-            const res = await axios.post('/api/upload', formData, {
+            const res = await axios.post(`${API.URI}/api/upload`, formData, {
                 headers: { 'content-type': 'multipart/form-data', Authorization: token }
             })
             //console.log(res)
@@ -89,7 +89,7 @@ function AddProduct() {
         try {
             if (!isAdmin) return alert("Ingresa con una cuenta de administrador")
             setLoading(true);
-            await axios.post('/api/destroy', { public_id: images.public_id }, {
+            await axios.post(`${API.URI}/api/destroy`, { public_id: images.public_id }, {
                 headers: { Authorization: token }
             })
             setLoading(false);
@@ -111,11 +111,11 @@ function AddProduct() {
             if (!images) return alert("Ingresa una imagen")
 
             if (onEdit) {
-                await axios.put(`/api/products/${product._id}`, { ...product, images }, {
+                await axios.put(`${API.URI}/api/products/${product._id}`, { ...product, images }, {
                     headers: { Authorization: token }
                 })
             } else {
-                await axios.post('/api/products', { ...product, images }, {
+                await axios.post(`${API.URI}/api/products`, { ...product, images }, {
                     headers: { Authorization: token }
                 })
             }

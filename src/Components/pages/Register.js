@@ -3,6 +3,8 @@ import { Card, Form, Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import API from '../utils/const'
+
 function Register() {
 
     const [user, setUser] = useState({
