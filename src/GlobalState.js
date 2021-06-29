@@ -12,10 +12,13 @@ export const DataProvider = ({ children }) => {
     const [token, setToken] = useState(false)
 
     const refreshToken = async () => {
-        try{
+        try {
             const res = await axios.get('user/refresh_token')
             setToken(res.data.accesstoken)
-        }catch(err){
+            setTimeout(() => {
+                refreshToken()
+            }, 10 * 60 * 1000)
+        } catch (err) {
             alert(err.response.data.msg)
         }
     }

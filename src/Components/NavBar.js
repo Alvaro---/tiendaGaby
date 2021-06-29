@@ -39,7 +39,7 @@ function NavBar() {
     const rutasUsuario = () => {
         return (
             <>
-                <Nav.Link as={Link} to="/">Historial</Nav.Link>
+                {/*    <Nav.Link as={Link} to="/">Historial</Nav.Link> */}
                 <Nav.Link as={Link} to="/" onClick={logoutUser}>LogOut</Nav.Link>
             </>
         )
@@ -65,6 +65,7 @@ function NavBar() {
                             {isAdmin ? "Editar productos" : "Catalogo"}
                         </Nav.Link>
                         {isAdmin && rutasAdmin()}
+                        {/*<Nav.Link as={Link} to="/PedidoPersonalizado">Hacer un pedido</Nav.Link>*/}
                         {isLogged ?
                             rutasUsuario() :
                             <Nav.Link as={Link} to="/login">Login - Register</Nav.Link>
@@ -74,7 +75,7 @@ function NavBar() {
                                 :
                                 <div className="cart-icon">
                                     <span>{cart.length}</span>
-                                    <Nav.Link as={Link} to="/products">
+                                    <Nav.Link as={Link} to="/cart">
                                         <FontAwesomeIcon icon={faShoppingCart} size="lg" />
                                     </Nav.Link>
                                 </div>

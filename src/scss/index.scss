@@ -15,7 +15,7 @@
 
 $primary: #0e143d;
 $darkSecondary: #8d8e8a;
-$secondary: #eae7dc;
+$secondary: hsl(47, 25%, 89%);
 $ligthPrimary: #598fec;
 $neutral: #d8c3a5;
 $atncion: #8f0339;
@@ -50,3 +50,9 @@ $theme-colors: (
 @import "./products.scss";
 @import "./navbar.scss";
 @import "./categorias.scss";
+@import "./addProduct.scss";
+@import "./detailProduct.scss";
+@import "./footer.scss";
+
+@import "../Components/cart/cart.scss";
+@import "../loading/loading.scss";
