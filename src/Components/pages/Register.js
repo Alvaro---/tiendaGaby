@@ -3,7 +3,7 @@ import { Card, Form, Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-import API from '../utils/const'
+import API from '../../utils/const'
 
 function Register() {
 
@@ -21,7 +21,7 @@ function Register() {
     const registerSubmit = async e => {
         e.preventDefault()
         try {
-            await axios.post('/user/register', { ...user })
+            await axios.post(`${API.URI}/user/register`, { ...user })
             localStorage.setItem('firstLogin', true)
 
             window.location.href = "/products";

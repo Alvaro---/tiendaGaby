@@ -12,6 +12,8 @@ function Products() {
     const [token] = state.token;
     const [callback, setCallback] = state.productsApi.callback
 
+    console.log(token)
+
     return (
         <Container>
             <div className="rowContainerBanner">

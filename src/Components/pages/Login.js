@@ -3,7 +3,7 @@ import { Card, Form, Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import axios from "axios";
 
-import API from '../utils/const'
+import API from '../../utils/const'
 
 function Login() {
 
@@ -20,9 +20,10 @@ function Login() {
     const loginSubmit = async e => {
         e.preventDefault()
         try {
-            await axios.post(`${API.URI}/user/login`, { ...user })
-          //  console.log(token)
+            await axios.post('/user/login', { ...user })
+
             localStorage.setItem('firstLogin', true)
+
             window.location.href = "/products";
         } catch (err) {
             alert(err.response.data.msg)

@@ -6,6 +6,8 @@ import { Container, Button } from 'react-bootstrap'
 //import PaypalButton from './PaypalButton'
 import ReactWhatsapp from 'react-whatsapp';
 
+import API from '../../utils/const'
+
 function Cart() {
     const state = useContext(GlobalState)
     const [cart, setCart] = state.userApi.cart
@@ -62,7 +64,7 @@ function Cart() {
     }, [cart])
 
     const addToCart = async () => {
-        await axios.patch('/user/addcart', { cart }, {
+        await axios.patch(`${API.URI}/user/addcart`, { cart }, {
             headers: { Authorization: token }
         })
     }
@@ -111,9 +113,6 @@ function Cart() {
         addToCart()
     }
 
-    const tranSuccess = async (payment) => {
-        console.log(payment)
-    }
 
     if (cart.length === 0)
         return <h2 style={{ textAlign: "center", fontSize: "5rem" }}>Cart Empty</h2>

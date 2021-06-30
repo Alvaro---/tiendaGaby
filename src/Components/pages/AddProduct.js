@@ -6,6 +6,9 @@ import { useHistory, useParams } from "react-router-dom";
 
 import Loading from '../../loading/Loading'
 
+import API from '../../utils/const'
+
+
 function AddProduct() {
 
     const initialState = {

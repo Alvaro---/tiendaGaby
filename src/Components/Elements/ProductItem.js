@@ -3,6 +3,8 @@ import { Card, Row } from 'react-bootstrap'
 import BtnRender from './BtnRender'
 import axios from 'axios'
 
+import API from '../../utils/const'
+
 import Loading from "../../loading/Loading";
 
 function ProductItem({ product, isAdmin, token, callback, setCallback }) {
@@ -12,11 +14,11 @@ function ProductItem({ product, isAdmin, token, callback, setCallback }) {
     const deleteProduct = async () => {
         try {
             setloading(true);
-            const destroyImg = axios.post('/api/destroy', { public_id: product.images.public_id }, {
+            const destroyImg = axios.post(`${API.URI}/api/destroy`, { public_id: product.images.public_id }, {
                 headers: { Authorization: token }
             })
 
-            const deleteProd = axios.delete(`/api/products/${product._id}`, {
+            const deleteProd = axios.delete(`${API.URI}/api/products/${product._id}`, {
                 headers: { Authorization: token }
             })
 

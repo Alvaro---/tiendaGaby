@@ -5,6 +5,8 @@ import UserApi from './api/UserApi'
 import ProductApi from './api/ProductApi'
 import CategoriasApi from './api/CategoriasApi'
 
+import API from './utils/const'
+
 export const GlobalState = createContext()
 
 export const DataProvider = ({ children }) => {
@@ -13,7 +15,8 @@ export const DataProvider = ({ children }) => {
 
     const refreshToken = async () => {
         try {
-            const res = await axios.get('user/refresh_token')
+            console.log("aca problema")
+            const res = await axios.get('/user/refresh_token')
             setToken(res.data.accesstoken)
             setTimeout(() => {
                 refreshToken()

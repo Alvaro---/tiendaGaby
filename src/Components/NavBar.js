@@ -3,6 +3,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { GlobalState } from '../GlobalState'
 import axios from 'axios'
+import API from '../utils/const'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
@@ -20,7 +21,7 @@ function NavBar() {
     const [userName] = state.userApi.userName;
 
     const logoutUser = async () => {
-        await axios.get('user/logout')
+        await axios.get(`${API.URI}/user/logout`)
         localStorage.clear()
         // setIsAdmin(false)
         // setIsLogged(false)
